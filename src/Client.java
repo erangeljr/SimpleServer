@@ -34,6 +34,28 @@ public class Client extends JFrame{
 		
 		chatServer = host;
 		
+		enterField = new JTextField();
+		enterField.setEditable(false);
+		
+		enterField.addActionListener(
+			//Anonymous Class
+			new ActionListener(){
+				
+				public void actionPerformed(ActionEvent event){
+					
+					sendData(event.getActionCommand());
+					enterField.setText("");
+				}
+	
+			});
+			
+		
+	}//End Default Constructor
+	
+
+	private void sendData(String actionCommand) {
+		// TODO Auto-generated method stub
+		
 	}
 
-}
+}//End Class
