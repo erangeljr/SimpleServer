@@ -9,7 +9,7 @@ public class SimpleServer {
 		Server application = new Server();
 		
 		application.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//		application.runServer();
+		application.runServer();
 	}
 
 }

@@ -72,6 +72,9 @@ public class Server extends JFrame{
 					processConnection();
 					
 				}
+				catch(EOFException e){
+					displayMessage("\nServer Terminated Connection");
+				}
 				finally{
 					
 					closeConnection();
