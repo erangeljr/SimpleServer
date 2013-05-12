@@ -103,8 +103,17 @@ public class Server extends JFrame{
 		
 	}
 
-	private void getStream() {
+	private void getStream() throws IOException{
 		// TODO Auto-generated method stub
+		
+		
+		output = new ObjectOutputStream(connection.getOutputStream());
+		output.flush();
+		
+		input = new ObjectInputStream(connection.getInputStream());
+		
+		displayMessage("\n Got I/O Streams");
+		
 		
 	}
 
