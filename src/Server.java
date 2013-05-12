@@ -1,3 +1,4 @@
+import java.io.EOFException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
@@ -6,7 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -57,8 +57,61 @@ public class Server extends JFrame{
 	
 	public void runServer(){
 		
-	}
+		try{
+			
+			server = new ServerSocket(12345, 100);
+		
+			while(true)
+			{
+				try{
+					
+					waitForConnection();
+					getStream();
+					processConnection();
+					
+				}
+				finally{
+					
+					closeConnection();
+					++counter;
+				}
+			}
+			
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
 	
+	}//End runServer
+	
+	
+	
+	private void closeConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void displayMessage(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void processConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void getStream() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void waitForConnection() throws IOException{
+		// TODO Auto-generated method stub
+		displayMessage("Waiting for Connection\n");
+		
+	}
+
 	private void sendData(String actionCommand) {
 		// TODO Auto-generated method stub
 		
