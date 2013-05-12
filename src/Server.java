@@ -98,7 +98,30 @@ public class Server extends JFrame{
 		
 	}
 
-	private void processConnection() {
+	private void processConnection() throws IOException{
+		// TODO Auto-generated method stub
+		String message = "Connection successful";
+		
+		sendData(message);
+		
+		setTextFieldEditable(true);
+		
+		do{
+			
+			try{
+				
+				message = (String) input.readObject();
+				displayMessage("\n" + message);
+			}
+			catch(ClassNotFoundException e){
+				
+				displayMessage("\nUnknown object type received");
+			}
+		}
+		while(!message.equals("CLIENT>>>TERMINATE"));
+	}
+
+	private void setTextFieldEditable(boolean b) {
 		// TODO Auto-generated method stub
 		
 	}
