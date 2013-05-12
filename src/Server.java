@@ -87,7 +87,6 @@ public class Server extends JFrame{
 	}//End runServer
 	
 	
-	
 	private void closeConnection() {
 		// TODO Auto-generated method stub
 		displayMessage("\nTerminating Connection\n");
@@ -120,8 +119,7 @@ public class Server extends JFrame{
 					}
 				}
 				
-				);
-		
+		);		
 	}
 
 	private void processConnection() throws IOException{
@@ -133,7 +131,7 @@ public class Server extends JFrame{
 		setTextFieldEditable(true);
 		
 		do{
-			
+
 			try{
 				
 				message = (String) input.readObject();
@@ -157,14 +155,12 @@ public class Server extends JFrame{
 					public void run(){
 						enterField.setEditable(isEditable);
 					}
-				}
-				
-				);
+				}		
+		);
 	}
 
 	private void getStream() throws IOException{
 		// TODO Auto-generated method stub
-		
 		
 		output = new ObjectOutputStream(connection.getOutputStream());
 		output.flush();
@@ -172,7 +168,6 @@ public class Server extends JFrame{
 		input = new ObjectInputStream(connection.getInputStream());
 		
 		displayMessage("\n Got I/O Streams");
-		
 		
 	}
 
@@ -184,8 +179,6 @@ public class Server extends JFrame{
 		
 		displayMessage("Connection " + counter + " received from: " + 
 						connection.getInetAddress().getHostName());
-		
-		
 		
 	}
 
