@@ -3,6 +3,7 @@ import java.io.ObjectOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -48,7 +49,8 @@ public class Server extends JFrame{
 				);
 		
 		add(enterField, BorderLayout.NORTH);
-		
+		displayArea = new JTextArea();
+		add(new JScrollPane(displayArea),BorderLayout.CENTER);
 		
 		
 
