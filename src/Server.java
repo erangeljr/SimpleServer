@@ -90,6 +90,20 @@ public class Server extends JFrame{
 	
 	private void closeConnection() {
 		// TODO Auto-generated method stub
+		displayMessage("\nTerminating Connection\n");
+		
+		setTextFieldEditable(false);
+		
+		try{
+			
+			output.close();
+			input.close();
+			connection.close();
+		}
+		catch(IOException e){
+			
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -153,8 +167,20 @@ public class Server extends JFrame{
 		
 	}
 
-	private void sendData(String actionCommand) {
+	private void sendData(String message) {
 		// TODO Auto-generated method stub
+		try{
+			
+			output.writeObject("SERVER>>> " + message);
+			output.flush();
+			
+			displayMessage("\nSERVER>>> " + message);
+			
+		}
+		catch(IOException e){
+			
+			displayArea.append("\nError writing object");
+		}
 		
 	}
 
