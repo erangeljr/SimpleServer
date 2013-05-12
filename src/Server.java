@@ -3,8 +3,15 @@ import java.io.ObjectOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Server extends JFrame{
+	
+	private JTextField enterField;
+	private JTextArea displayArea;
 
 	//Output Stream to Client
 	private ObjectOutputStream output;
@@ -18,6 +25,24 @@ public class Server extends JFrame{
 	
 	//Default Constructor
 	public Server(){
+		
+		super("Server Application");
+		
+		enterField = new JTextField();
+		enterField.setEditable(false);
+		enterField.addActionListener(
+				
+				new ActionListener(){
+					
+					public void actionPerformed(ActionEvent event){
+						
+//						sendData();
+					}
+				}
+				);
+		
+		
+		
 
 	}
 
