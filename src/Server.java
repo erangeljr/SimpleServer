@@ -35,26 +35,29 @@ public class Server extends JFrame{
 		enterField.setEditable(false);
 		enterField.addActionListener(
 				
-				//Anonymous Class
-				new ActionListener(){
-					
-					public void actionPerformed(ActionEvent event){
-						
-						sendData(event.getActionCommand());
-						enterField.setText("");
-					}
-
+			//Anonymous Class
+			new ActionListener(){
 				
+				public void actionPerformed(ActionEvent event){
+					
+					sendData(event.getActionCommand());
+					enterField.setText("");
 				}
-				);
+			});
 		
 		add(enterField, BorderLayout.NORTH);
 		displayArea = new JTextArea();
 		add(new JScrollPane(displayArea),BorderLayout.CENTER);
 		
+		//Setting Up Window
+		setSize(350,150);
+		setVisible(true);
 		
-
 	}//End Default Constructor
+	
+	public void runServer(){
+		
+	}
 	
 	private void sendData(String actionCommand) {
 		// TODO Auto-generated method stub
