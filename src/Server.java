@@ -3,6 +3,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
+
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -23,7 +25,7 @@ public class Server extends JFrame{
 	//ServerSocket
 	private ServerSocket server;
 	//Connection to Client
-	private Server connection;
+	private Socket connection;
 	private int counter = 1;
 	
 	//Default Constructor
@@ -109,6 +111,13 @@ public class Server extends JFrame{
 	private void waitForConnection() throws IOException{
 		// TODO Auto-generated method stub
 		displayMessage("Waiting for Connection\n");
+		
+		connection = server.accept();
+		
+		displayMessage("Connection " + counter + " received from: " + 
+						connection.getInetAddress().getHostName());
+		
+		
 		
 	}
 
