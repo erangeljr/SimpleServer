@@ -5,6 +5,8 @@ import java.net.ServerSocket;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -32,19 +34,29 @@ public class Server extends JFrame{
 		enterField.setEditable(false);
 		enterField.addActionListener(
 				
+				//Anonymous Class
 				new ActionListener(){
 					
 					public void actionPerformed(ActionEvent event){
 						
-//						sendData();
+						sendData(event.getActionCommand());
+						enterField.setText("");
 					}
+
+				
 				}
 				);
 		
+		add(enterField, BorderLayout.NORTH);
+		
 		
 		
 
+	}//End Default Constructor
+	
+	private void sendData(String actionCommand) {
+		// TODO Auto-generated method stub
+		
 	}
 
-	
-}
+}//End Class
