@@ -4,11 +4,11 @@ import java.io.ObjectOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -107,8 +107,20 @@ public class Server extends JFrame{
 		
 	}
 
-	private void displayMessage(String message) {
+	private void displayMessage(final String message) {
 		// TODO Auto-generated method stub
+		
+		SwingUtilities.invokeLater(
+				
+				new Runnable(){
+					
+					public void run(){
+						
+						displayArea.append(message);
+					}
+				}
+				
+				);
 		
 	}
 
@@ -135,9 +147,19 @@ public class Server extends JFrame{
 		while(!message.equals("CLIENT>>>TERMINATE"));
 	}
 
-	private void setTextFieldEditable(boolean b) {
+	private void setTextFieldEditable(final boolean isEditable) {
 		// TODO Auto-generated method stub
 		
+		SwingUtilities.invokeLater(
+				
+				new Runnable(){
+					
+					public void run(){
+						enterField.setEditable(isEditable);
+					}
+				}
+				
+				);
 	}
 
 	private void getStream() throws IOException{
