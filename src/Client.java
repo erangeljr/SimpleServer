@@ -56,10 +56,12 @@ public class Client extends JFrame{
 		//Setting Up Window
 		setSize(350,150);
 		setVisible(true);
-			
-		
+					
 	}//End Default Constructor
 	
+	public void runClient(){
+		
+	}
 
 	private void sendData(String actionCommand) {
 		// TODO Auto-generated method stub
