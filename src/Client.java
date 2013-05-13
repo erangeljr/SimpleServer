@@ -101,15 +101,7 @@ public class Client extends JFrame{
 	private void displayMessage(String message) {
 		// TODO Auto-generated method stub
 		
-		try{
-			
-			output.writeObject("CLIENT>>>" + message);
-			output.flush();
-			displayMessage("\nCLIENT>>>" + message);
-		}
-		catch(IOException e){
-			displayMessage("\nError writing object");
-		}
+		
 	}
 
 	private void getStreams() throws IOException {
@@ -160,6 +152,15 @@ public class Client extends JFrame{
 
 	private void sendData(String message) {
 		// TODO Auto-generated method stub
+		try{
+			
+			output.writeObject("CLIENT>>>" + message);
+			output.flush();
+			displayMessage("\nCLIENT>>>" + message);
+		}
+		catch(IOException e){
+			displayMessage("\nError writing object");
+		}
 		
 	}
 
