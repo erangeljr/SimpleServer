@@ -146,8 +146,18 @@ public class Client extends JFrame{
 		
 	}
 
-	private void setTextFieldEditable(boolean isEditable) {
+	private void setTextFieldEditable(final boolean isEditable) {
 		// TODO Auto-generated method stub
+		
+		SwingUtilities.invokeLater(
+					
+				new Runnable(){
+					
+					public void run(){
+						enterField.setEditable(isEditable);
+					}
+				}		
+			);
 		
 	}
 
