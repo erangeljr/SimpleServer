@@ -48,6 +48,14 @@ public class Client extends JFrame{
 				}
 	
 			});
+		
+		add(enterField, BorderLayout.NORTH);
+		displayArea = new JTextArea();
+		add(new JScrollPane(displayArea),BorderLayout.CENTER);
+		
+		//Setting Up Window
+		setSize(350,150);
+		setVisible(true);
 			
 		
 	}//End Default Constructor
