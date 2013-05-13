@@ -3,7 +3,7 @@ import javax.swing.JFrame;
 
 public class SimpleClient {
 	
-	public void main(String[] args){
+	public static void main(String[] args){
 
 		//Create new Server Application
 		Client application;
