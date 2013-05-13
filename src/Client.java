@@ -90,9 +90,15 @@ public class Client extends JFrame{
 		
 	}
 
-	private void getStreams() {
+	private void getStreams() throws IOException {
 		// TODO Auto-generated method stub
+		output = new ObjectOutputStream(client.getOutputStream());
+		output.flush();
 		
+		input = new ObjectInputStream(client.getInputStream());
+		
+		displayMessage("\nGot IO Streams");
+				
 	}
 
 	private void processConnection() {
@@ -107,9 +113,7 @@ public class Client extends JFrame{
 		client = new Socket(InetAddress.getByName(chatServer), 12345);
 		
 		displayMessage("Connected to: " + client.getInetAddress().getHostName());
-		
-		
-		
+				
 	}
 
 	private void sendData(String actionCommand) {
