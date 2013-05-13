@@ -83,7 +83,17 @@ public class Client extends JFrame{
 	private void closeConnection() {
 		// TODO Auto-generated method stub
 		displayMessage("\nClosing Connection");
+		setTextFieldEditable(false);
 		
+		try{
+			
+			input.close();
+			output.close();
+			client.close();			
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
 				
 		
 	}
@@ -91,6 +101,15 @@ public class Client extends JFrame{
 	private void displayMessage(String message) {
 		// TODO Auto-generated method stub
 		
+		try{
+			
+			output.writeObject("CLIENT>>>" + message);
+			output.flush();
+			displayMessage("\nCLIENT>>>" + message);
+		}
+		catch(IOException e){
+			displayMessage("\nError writing object");
+		}
 	}
 
 	private void getStreams() throws IOException {
