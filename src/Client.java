@@ -61,6 +61,47 @@ public class Client extends JFrame{
 	
 	public void runClient(){
 		
+		try{
+			
+			connectToServer();
+			getStreams();
+			processConnection();
+			
+		}
+		catch(EOFException e){
+			displayMessage("\nClient Terminated Connection");
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+		finally{
+			closeConnection();
+		}
+	}
+
+	private void closeConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void displayMessage(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void getStreams() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void processConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void connectToServer() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private void sendData(String actionCommand) {
