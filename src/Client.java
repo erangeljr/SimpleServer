@@ -98,9 +98,20 @@ public class Client extends JFrame{
 		
 	}
 
-	private void displayMessage(String message) {
+	private void displayMessage(final String message) {
 		// TODO Auto-generated method stub
 		
+		SwingUtilities.invokeLater(
+				
+			new Runnable(){
+				
+				public void run(){
+					
+					displayArea.append(message);
+				}
+			}
+			
+			);	
 		
 	}
 
