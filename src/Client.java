@@ -82,6 +82,9 @@ public class Client extends JFrame{
 
 	private void closeConnection() {
 		// TODO Auto-generated method stub
+		displayMessage("\nClosing Connection");
+		
+				
 		
 	}
 
@@ -103,7 +106,26 @@ public class Client extends JFrame{
 
 	private void processConnection() throws IOException{
 		// TODO Auto-generated method stub
+		setTextFieldEditable(true);
 		
+		do{
+			
+			try{
+				
+				message = (String) input.readObject();
+				displayMessage("\n" + message);
+			}
+			catch(ClassNotFoundException e){
+				displayMessage("\nUnknown object type received");
+			}
+		}
+		while(!message.equals("SERVER>>>TERMINATE"));
+		
+		
+	}
+
+	private void setTextFieldEditable(boolean isEditable) {
+		// TODO Auto-generated method stub
 		
 	}
 
