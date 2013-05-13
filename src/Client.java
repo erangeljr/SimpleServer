@@ -2,6 +2,7 @@ import java.io.EOFException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import javax.swing.JFrame;
@@ -99,8 +100,15 @@ public class Client extends JFrame{
 		
 	}
 
-	private void connectToServer() {
+	private void connectToServer() throws IOException{
 		// TODO Auto-generated method stub
+		displayMessage("Attempting Connection");
+		
+		client = new Socket(InetAddress.getByName(chatServer), 12345);
+		
+		displayMessage("Connected to: " + client.getInetAddress().getHostName());
+		
+		
 		
 	}
 
