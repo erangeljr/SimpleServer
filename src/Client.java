@@ -85,7 +85,7 @@ public class Client extends JFrame{
 		
 	}
 
-	private void displayMessage(String string) {
+	private void displayMessage(String message) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -101,8 +101,9 @@ public class Client extends JFrame{
 				
 	}
 
-	private void processConnection() {
+	private void processConnection() throws IOException{
 		// TODO Auto-generated method stub
+		
 		
 	}
 
@@ -116,7 +117,7 @@ public class Client extends JFrame{
 				
 	}
 
-	private void sendData(String actionCommand) {
+	private void sendData(String message) {
 		// TODO Auto-generated method stub
 		
 	}
